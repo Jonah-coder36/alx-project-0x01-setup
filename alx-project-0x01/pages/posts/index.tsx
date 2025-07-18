@@ -3,7 +3,7 @@ import PostModal from "@/components/common/PostModal";
 import Header from "@/components/layout/Header";
 import { useState } from "react";
 import { PostProps, PostData } from "@/interfaces";
-
+import { PostProps } from "@/interfaces";
 interface Props {
   posts: PostProps[];
 }
