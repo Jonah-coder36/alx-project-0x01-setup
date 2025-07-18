@@ -51,4 +51,7 @@ export default function Users({ posts }: Props) {
     </div>
   );
 }
+{posts.map((user) => (
+  <UserCard key={user.id} {...user} />
+))}
 
