@@ -55,3 +55,4 @@ export default function Users({ posts }: Props) {
   <UserCard key={user.id} {...user} />
 ))}
 
+export default Users;
