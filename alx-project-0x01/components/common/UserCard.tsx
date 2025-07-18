@@ -1,14 +1,36 @@
-import { UserProps } from '@/interfaces';
+import React from "react";
+import { UserProps } from "@/interfaces";
 
-export default function UserCard({ name, email, phone, website, company, address }: UserProps) {
+const UserCard: React.FC<UserProps> = ({
+  name,
+  email,
+  phone,
+  website,
+  address,
+  company,
+}) => {
   return (
-    <div className="border rounded-xl shadow-md p-4 bg-white hover:shadow-lg transition">
-      <h2 className="text-lg font-bold">{name}</h2>
-      <p className="text-sm text-gray-600">{email}</p>
+    <div className="bg-white rounded-xl shadow-md p-4">
+      <h2 className="text-lg font-semibold">{name}</h2>
+      <p className="text-sm text-gray-500">{email}</p>
       <p className="text-sm">{phone}</p>
-      <p className="text-sm text-blue-500 underline">{website}</p>
-      <p className="text-sm font-medium mt-2">Company: {company.name}</p>
-      <p className="text-xs text-gray-500">Address: {address.street}, {address.city}</p>
+      <p className="text-sm text-blue-600">{website}</p>
+
+      <div className="mt-2">
+        <p className="text-sm font-semibold">Company:</p>
+        <p className="text-sm text-gray-700">{company.name}</p>
+        <p className="text-sm italic text-gray-500">{company.catchPhrase}</p>
+      </div>
+
+      <div className="mt-2">
+        <p className="text-sm font-semibold">Address:</p>
+        <p className="text-sm">
+          {address.street}, {address.city}
+        </p>
+      </div>
     </div>
   );
-}
+};
+
+export default UserCard;
+
